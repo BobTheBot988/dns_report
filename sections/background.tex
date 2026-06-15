@@ -1,3 +1,37 @@
 \section{Background}\label{sec:background}
 
-In this section you need to give the reader background information about the topic, e.g., if you are talking about deep neural networks, explain a bit how they work. What is in the marketplace or academic literature?
+\subsection{Deep Learning Networks}
+Complex computational problems can be addressed through various methodologies, prominent among which is Deep Learning. This paradigm is fundamentally rooted in mathematical optimization. Consider a predictive model defined as:
+\begin{equation}
+\begin{aligned}
+  & f_{\theta} : \mathbb{R}^{K} \to \mathbb{R}^{m} \\
+  &\forall x \in \mathbb{R}^K,  \Theta(x) \in \mathbb{R}^m
+\end{aligned}
+\label{eq:deeplearningmain}
+\end{equation}
+The objective of training is to optimize the internal parameters—specifically the weights and biases of the neurons—to maximize the model's predictive accuracy. 
+
+This optimization process is systematically executed through the following iterative phases:
+\begin{itemize}
+  \item \textbf{Initialization:} The network parameters are initially set using randomized values or predefined distribution strategies.
+  \item \textbf{Forward Propagation:} An input vector $x$ is processed through the mapping function to generate a predicted output, denoted as $\hat{y}$ (commonly referred to as the forward pass).
+  \item \textbf{Error Evaluation:} The discrepancy between the predicted output and the ground-truth label $y$ is quantified by evaluating a Loss function $\mathbf{L}$ (defined in Equation \ref{eq:lossEq}).
+\item \textbf{Backpropagation and Optimization:} Utilizing the backpropagation algorithm, the gradient of the loss function is computed with respect to each network weight via the chain rule. The model parameters are subsequently adjusted in the negative gradient direction—a process known as gradient descent—effectively minimizing the objective function.
+\end{itemize}
+
+\begin{equation}
+\begin{aligned}
+  \hat{y} &= \Theta(x) \\
+  L(x) &= y - \hat{y}
+\end{aligned}
+\label{eq:lossEq}
+\end{equation}
+
+While the mathematical formulation of the loss function varies depending on the specific task architecture, its underlying objective remains constant: the resulting scalar serves as a performance metric utilized by optimization algorithms to converge toward the global minimum\footnote{The parameter configuration that minimizes the loss value.}.
+
+The foundational principles detailed above describe standard Machine Learning. The distinction between classical Machine Learning and Deep Learning primarily lies in structural complexity; standard Machine Learning models typically rely on shallow architectures, whereas Deep Learning utilizes deep neural networks characterized by multiple successive hidden layers. 
+
+Formally, $\text{Deep Learning} \subset \text{Machine Learning}$. While both paradigms maintain distinct domains of utility, this report focuses primarily on the deployment and behavior of Deep Learning architectures.
+
+\subsection{Base Station}
+This infrastructure comprises cellular base stations maintained by telecommunication service providers. These stations aggregate vast quantities of telemetry and location data which, despite the application of anonymization techniques, remain vulnerable to re-identification attacks orchestrated via deep learning models. Consequently, any adversary possessing sufficient computational resources could exploit these vulnerabilities to execute large-scale mass surveillance\footnote{\href{https://www.amnesty.org/en/latest/campaigns/2015/03/easy-guide-to-mass-surveillance/}{Amnesty International: An Easy Guide to Mass Surveillance}}.
