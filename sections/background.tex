@@ -35,3 +35,15 @@ Formally, $\text{Deep Learning} \subset \text{Machine Learning}$. While both par
 
 \subsection{Base Station}
 This infrastructure comprises cellular base stations maintained by telecommunication service providers. These stations aggregate vast quantities of telemetry and location data which, despite the application of anonymization techniques, remain vulnerable to re-identification attacks orchestrated via deep learning models. Consequently, any adversary possessing sufficient computational resources could exploit these vulnerabilities to execute large-scale mass surveillance\footnote{\href{https://www.amnesty.org/en/latest/campaigns/2015/03/easy-guide-to-mass-surveillance/}{Amnesty International: An Easy Guide to Mass Surveillance}}.
+
+\subsection{The SURE Framework (User Re-identification)}
+The SURE (Smartphone Users RE-identification) framework is a deep learning model designed to accurately classify whether two input network traces belong to the same user. It utilizes a parallel dual-encoder architecture to process anonymous and known-identity traces independently, preventing data contamination before mathematical comparison. The core of the system is spatio-temporal embedding, which vectorizes four parameters: Base Station (BS) IDs, association duration, and discretized levels of uplink and downlink traffic. Evaluations on datasets involving 10,000 users show that SURE achieves a surgical AUC above 0.9 even with a data window as narrow as four days.
+
+\subsection{The MoCo Framework (Contact Detection)}
+MoCo (Mobile Contact detection) focuses on identifying users moving in "lockstep," such as those co-traveling in the same vehicle. The framework uses a three-stage pipeline: data denoising via the DBSCAN algorithm to remove remote BS noise, a spatio-temporal filter (ST-Filter) to eliminate unlikely contact pairs (typically requiring $\ge$ 60\% spatial similarity),
+and a learning network that integrates an LSTM-based spatial branch with an MLP-based temporal branch. MoCo can effectively map a target's "inner circle" by searching for traces that mirror their movements, reaching an average F1-score of 87.13\%.
+
+\subsection{Vulnerabilities in Self-Supervised Learning (SSL)}
+While powerful, these frameworks are susceptible to \textbf{backdoor attacks} [7, 8]. An adversary can poison as little as 0.5\% of unlabeled training data with a rigid "trigger" patch, causing the model to associate that trigger with a target category at test time [3, 9].
+
+

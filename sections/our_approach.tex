@@ -1,4 +1,24 @@
 \section{Overview of your proposed approach}\label{sec:our_approach}
+\subsection{Technical Architecture}
+We propose \textbf{Meshtastic}, a decentralized mesh network utilizing the \textbf{LoRa physical layer} and Chirp Spread Spectrum (CSS) [5]. Signals consist of frequency-sweeping "chirps" with a 16-up-chirp Preamble for synchronization and a specific Sync Word (0x2B) to distinguish the network [5, 10].
 
-In this section you need to provide scientific and technical detail about your proposal, explaining what you want to do, describing the idea and how it differs to current state-of-the-art. How can your project be done?
-Select approaches to form the basis of the solution, ensure you can justify it
+\subsection{Decentralized Metadata Protection}
+The primary strength is the total bypass of Cellular Operator Data Systems [5]. In a mesh architecture, there is no central database logging "Top 2 BS" anchors or hourly traffic windows—the features required by SURE and MoCo for re-identification [3, 5].
+
+\subsection{Encryption and Routing}
+Meshtastic payloads are encrypted using \textbf{AES-128 shared-key encryption} [5, 11]. Only nodes with the correct channel key can interpret data, while decentralized "hop limits" prevent the creation of a trackable historical footprint [5, 12].
+
+\begin{table}[htbp]
+\caption{SWOT Analysis: Meshtastic Parallel Network vs. Cellular}
+\begin{center}
+\begin{tabular}{lp{3cm}p{3cm}}
+\toprule
+ & \textbf{Internal} & \textbf{External} \\
+\midrule
+\textbf{S}trengths & No centralized operator logs; metadata privacy; AES encryption [3, 5]. & \textbf{O}pportunities: High-privacy operational demand; resistance to state-level AI [6]. \\
+\midrule
+\textbf{W}eaknesses & Lower data rates; limited propagation range of LoRa [5, 13]. & \textbf{T}hreats: Signal triangulation; future RF fingerprinting evolutions [6]. \\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{table}
