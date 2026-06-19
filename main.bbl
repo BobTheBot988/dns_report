@@ -21,11 +21,50 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{adi_watermarking}
-Y.~Adi, C.~Baum, M.~Cisse, B.~Pinkas, and J.~Keshet, ``Turning your weakness
-  into a strength: Watermarking deep neural networks by backdooring,'' in
-  \emph{27th USENIX Security Symposium (USENIX Security 18)}.\hskip 1em plus
-  0.5em minus 0.4em\relax Baltimore, MD: USENIX Association, Aug. 2018, pp.
-  1615--1631.
+\bibitem{chhipa2024astra}
+\BIBentryALTinterwordspacing
+P.~C. Chhipa, G.~Vashishtha, S.~A.~S. Jithamanyu, R.~Saini, M.~Shah, and
+  M.~Liwicki, ``Astra: Adversarial self-supervised training with
+  adaptive-attacks,'' in \emph{Proceedings of the Center for Research in
+  Computer Vision}, 2024. [Online]. Available:
+  \url{https://prakashchhipa.github.io/projects/ASTrA}
+\BIBentrySTDinterwordspacing
+
+\bibitem{duan2025sure}
+S.~Duan, F.~Lyu, S.~Wang, Y.~Ding, X.~He, and Y.~Zhang, ``Exploring cellular
+  user re-identification risks with networking behaviors analysis and
+  modeling,'' \emph{IEEE Transactions on Mobile Computing}, 2025.
+
+\bibitem{duan2025moco}
+S.~Duan, F.~Lyu, J.~Zhang, H.~Lu, P.~Yang, H.~Wu, Y.~Zhang, and X.~Shen,
+  ``Moco: Urban user mobile contact detection based on cellular signaling
+  trace,'' \emph{IEEE Transactions on Mobile Computing}, vol.~24, no.~8, pp.
+  6780--6796, 2025.
+
+\bibitem{gupta2023contrastive}
+R.~Gupta, N.~Akhtar, A.~Mian, and M.~Shah, ``Contrastive self-supervised
+  learning leads to higher adversarial susceptibility,'' in \emph{Proceedings
+  of the {AAAI} Conference on Artificial Intelligence}, vol.~37, 2023, pp.
+  14\,838--14\,846.
+
+\bibitem{kim2020rocl}
+M.~Kim, J.~Tack, and S.~J. Hwang, ``Adversarial self-supervised contrastive
+  learning,'' in \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, vol.~33, 2020, pp. 2983--2994.
+
+\bibitem{meshtastic_overview}
+{Meshtastic Developers}, ``Overview | meshtastic documentation,''
+  \url{https://meshtastic.org/docs/introduction/overview}, 2024.
+
+\bibitem{saha2022backdoor}
+A.~Saha, A.~Tejankar, S.~A. Koohpayegani, and H.~Pirsiavash, ``Backdoor attacks
+  on self-supervised learning,'' in \emph{Proceedings of the IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition (CVPR)}, 2022, pp.
+  13\,337--13\,346.
+
+\bibitem{zhu2026dift}
+J.~Zhu, Y.~Jin, Q.~Ye, Z.~Guo, K.~Fang, R.~Du, Y.~Zhao, and H.~Hu, ``Dift:
+  Protecting contrastive learning against data poisoning backdoor attacks,'' in
+  \emph{Proceedings of the {AAAI} Conference on Artificial Intelligence}, 2026.
 
 \end{thebibliography}
