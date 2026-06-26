@@ -5,7 +5,7 @@ Complex computational problems can be addressed through various methodologies, p
 \begin{equation}
 \begin{aligned}
   & f_{\theta} : \mathbb{R}^{K} \to \mathbb{R}^{m} \\
-  &\forall x \in \mathbb{R}^K,  \Theta(x) \in \mathbb{R}^m
+  &\forall x \in \mathbb{R}^K, \; f_{\theta}(x) \in \mathbb{R}^m
 \end{aligned}
 \label{eq:deeplearningmain}
 \end{equation}
@@ -14,14 +14,14 @@ The objective of training is to optimize the internal parameters—specifically 
 This optimization process is systematically executed through the following iterative phases:
 \begin{itemize}
   \item \textbf{Initialization:} The network parameters are initially set using randomized values or predefined distribution strategies.
-  \item \textbf{Forward Propagation:} An input vector $x$ is processed through the mapping function to generate a predicted output, denoted as $\hat{y}$ (commonly referred to as the forward pass).
+  \item \textbf{Forward Propagation:} An input vector $x$ is processed through the mapping function $f_{\theta}$ to generate a predicted output, denoted as $\hat{y}$ (commonly referred to as the forward pass).
   \item \textbf{Error Evaluation:} The discrepancy between the predicted output and the ground-truth label $y$ is quantified by evaluating a Loss function $\mathbf{L}$ (defined in Equation \ref{eq:lossEq}).
 \item \textbf{Backpropagation and Optimization:} Utilizing the backpropagation algorithm, the gradient of the loss function is computed with respect to each network weight via the chain rule. The model parameters are subsequently adjusted in the negative gradient direction—a process known as gradient descent—effectively minimizing the objective function.
 \end{itemize}
 
 \begin{equation}
 \begin{aligned}
-  \hat{y} &= \Theta(x) \\
+  \hat{y} &= f_{\theta}(x) \\
   \mathcal{L} &= \mathcal{L}(\hat{y}, y)
 \end{aligned}
 \label{eq:lossEq}
