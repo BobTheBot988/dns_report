@@ -3,7 +3,7 @@
 We propose \textbf{Meshtastic}, a decentralized mesh network utilizing the \textbf{LoRa physical layer} and Chirp Spread Spectrum (CSS) \cite{meshtastic_overview}. Signals consist of frequency-sweeping ``chirps'' with a 16-up-chirp Preamble for synchronization and a specific Sync Word (0x2B) to distinguish the network \cite{meshtastic_overview}.
 
 \subsection{Decentralized Metadata Protection}
-The primary advantage is the complete bypass of Cellular Operator Data Systems \cite{meshtastic_overview}. In a mesh architecture, there is no central database logging ``Top 2 BS'' anchors or hourly traffic windows---the features required by SURE and MoCo for re-identification \cite{duan2025sure, duan2025moco, meshtastic_overview}. The SURE framework relies on extracting BS ID sequences, association durations, and traffic levels from centralized operator BSS/OSS databases \cite{duan2025sure}. Similarly, MoCo requires access to cellular signaling traces of the form $\langle$user ID, BS ID, timestamp$\rangle$ stored by operators \cite{duan2025moco}. By removing the centralized collection point entirely, Meshtastic eliminates the cellular operator metadata source that makes these attacks possible.
+The primary advantage is the complete bypass of Cellular Operator Data Systems \cite{meshtastic_overview}. In a mesh architecture, there is no central database logging ``Top 2 BS'' anchors or hourly traffic windows the features required by SURE and MoCo for re-identification \cite{duan2025sure, duan2025moco, meshtastic_overview}. The SURE framework relies on extracting BS ID sequences, association durations, and traffic levels from centralized operator BSS/OSS databases \cite{duan2025sure}. Similarly, MoCo requires access to cellular signaling traces of the form $\langle$user ID, BS ID, timestamp$\rangle$ stored by operators \cite{duan2025moco}. By removing the centralized collection point entirely, Meshtastic eliminates the cellular operator metadata source that makes these attacks possible.
 
 \subsection{Encryption and Routing}
 Meshtastic payloads are encrypted using \textbf{AES-256-CTR encryption} over LoRa, with a different key for each channel \cite{meshtastic_overview}. Only nodes with the correct channel key can interpret data, while hop limits constrain message propagation, reducing the volume of accessible metadata compared to centralized operator logging \cite{meshtastic_overview}.
@@ -18,13 +18,14 @@ To rigorously evaluate the position of the proposed Meshtastic parallel network 
 \begin{table}[htbp]
 \caption{SWOT Analysis: Meshtastic Parallel Network vs. Cellular}
 \begin{center}
-\begin{tabular}{lp{3cm}p{3cm}}
+\small
+\begin{tabular}{@{}lp{3cm}p{3cm}@{}}
 \toprule
  & \textbf{Internal} & \textbf{External} \\
 \midrule
-\textbf{S}trengths & No centralized operator logs; metadata privacy; AES-256-CTR encryption \cite{meshtastic_overview}. & \textbf{O}pportunities: High-privacy operational demand; growing need for off-grid communication. \\
+\textbf{S/O} & No centralized operator logs; metadata privacy; AES-256-CTR encryption \cite{meshtastic_overview}. & Growing demand for off-grid, high-privacy communication solutions. \\
 \midrule
-\textbf{W}eaknesses & Lower data rates; limited propagation range of LoRa \cite{meshtastic_overview}. & \textbf{T}hreats: Signal triangulation; future RF fingerprinting techniques. \\
+\textbf{W/T} & Lower data rates; limited LoRa range; no PFS \cite{meshtastic_overview}. & Signal triangulation; RF fingerprinting; LoRa band jamming. \\
 \bottomrule
 \end{tabular}
 \end{center}
@@ -36,4 +37,4 @@ To rigorously evaluate the position of the proposed Meshtastic parallel network 
 
 \textbf{Opportunities.} The increasing demand for operational security in privacy-sensitive domains creates a growing market for off-grid communication solutions. Recent data breaches at major operators (AT\&T, T-Mobile, US Cellular) \cite{duan2025sure} have highlighted the vulnerability of centralized data repositories, strengthening the case for decentralized alternatives. Application domains such as journalism, activism, and disaster relief stand to benefit from infrastructure-independent communication.
 
-\textbf{Threats.} While Meshtastic avoids cellular metadata collection, it remains potentially vulnerable to RF-level attacks. Signal triangulation using directional antennas could determine the physical location of transmitting nodes. Future advances in RF fingerprinting---which identify unique hardware characteristics of individual radio transmitters---could theoretically enable device-level identification without requiring centralized metadata logs. Additionally, intentional signal jamming in the LoRa frequency bands could disrupt mesh network operations.
+\textbf{Threats.} While Meshtastic avoids cellular metadata collection, it remains potentially vulnerable to RF-level attacks. Signal triangulation using directional antennas could determine the physical location of transmitting nodes. Future advances in RF fingerprinting which identify unique hardware characteristics of individual radio transmitters could theoretically enable device-level identification without requiring centralized metadata logs. Additionally, intentional signal jamming in the LoRa frequency bands could disrupt mesh network operations.

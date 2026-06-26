@@ -21,50 +21,63 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{chhipa2024astra}
+\bibitem{chhipa2025astra}
 \BIBentryALTinterwordspacing
-P.~C. Chhipa, G.~Vashishtha, S.~A.~S. Jithamanyu, R.~Saini, M.~Shah, and
-  M.~Liwicki, ``Astra: Adversarial self-supervised training with
-  adaptive-attacks,'' in \emph{Proceedings of the Center for Research in
-  Computer Vision}, 2024. [Online]. Available:
-  \url{https://prakashchhipa.github.io/projects/ASTrA}
+P.~C. Chhipa, G.~Vashishtha, S.~Jithamanyu, R.~Saini, M.~Shah, and M.~Liwicki,
+  ``{AST}ra: Adversarial self-supervised training with adaptive-attacks,'' in
+  \emph{The Thirteenth International Conference on Learning Representations},
+  2025. [Online]. Available: \url{https://openreview.net/forum?id=ZbkqhKbggH}
 \BIBentrySTDinterwordspacing
 
 \bibitem{duan2025sure}
-S.~Duan, F.~Lyu, S.~Wang, Y.~Ding, X.~He, and Y.~Zhang, 
-``Exploring Cellular User Re-Identification Risks With Networking Behaviors Analysis and Modeling,'' 
-\emph{IEEE Transactions on Mobile Computing}, vol.~25, no.~2, pp.~2462--2479, 2026. 
-doi: 10.1109/TMC.2025.3607772. \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11153907}
+\BIBentryALTinterwordspacing
+S.~Duan, F.~Lyu, S.~Wang, Y.~Ding, X.~He, and Y.~Zhang, ``Exploring cellular
+  user re-identification risks with networking behaviors analysis and
+  modeling,'' \emph{IEEE Transactions on Mobile Computing}, vol.~25, no.~2, pp.
+  2462--2479, 2026. [Online]. Available:
+  \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=11153907}
+\BIBentrySTDinterwordspacing
 
 \bibitem{duan2025moco}
-S.~Duan, F.~Lyu, J.~Zhang, H.~Lu, P.~Yang, H.~Wu, Y.~Zhang, and X.~Shen, 
-``MoCo: Urban User Mobile Contact Detection Based on Cellular Signaling Trace,'' 
-\emph{IEEE Transactions on Mobile Computing}, vol.~24, no.~8, pp.~6780--6796, 2025. 
-doi: 10.1109/TMC.2025.3545437. \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10902220}
+\BIBentryALTinterwordspacing
+S.~Duan, F.~Lyu, J.~Zhang, H.~Lu, P.~Yang, H.~Wu, Y.~Zhang, and X.~Shen,
+  ``Moco: Urban user mobile contact detection based on cellular signaling
+  trace,'' \emph{IEEE Transactions on Mobile Computing}, vol.~24, no.~8, pp.
+  6780--6796, 2025. [Online]. Available:
+  \url{https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=10902220}
+\BIBentrySTDinterwordspacing
 
 \bibitem{gupta2022contrastiveselfsupervisedlearningleads}
-R.~Gupta, N.~Akhtar, A.~Mian, and M.~Shah, 
-``Contrastive self-supervised learning leads to higher adversarial susceptibility,'' 
-2022, arXiv:2207.10862. \url{https://arxiv.org/abs/2207.10862}
+\BIBentryALTinterwordspacing
+R.~Gupta, N.~Akhtar, A.~Mian, and M.~Shah, ``Contrastive self-supervised
+  learning leads to higher adversarial susceptibility,'' 2022. [Online].
+  Available: \url{https://arxiv.org/abs/2207.10862}
+\BIBentrySTDinterwordspacing
 
 \bibitem{kim2020rocl}
+\BIBentryALTinterwordspacing
 M.~Kim, J.~Tack, and S.~J. Hwang, ``Adversarial self-supervised contrastive
-  learning,'' in \emph{Advances in Neural Information Processing Systems
-  (NeurIPS)}, vol.~33, 2020, pp. 2983--2994.
+  learning,'' 2020. [Online]. Available: \url{https://arxiv.org/abs/2006.07589}
+\BIBentrySTDinterwordspacing
 
 \bibitem{meshtastic_overview}
 {Meshtastic Developers}, ``Overview | meshtastic documentation,''
-  \url{https://meshtastic.org/docs/overview}.
+  \url{https://meshtastic.org/docs/overview/}, 2024.
 
 \bibitem{saha2022backdoor}
+\BIBentryALTinterwordspacing
 A.~Saha, A.~Tejankar, S.~A. Koohpayegani, and H.~Pirsiavash, ``Backdoor attacks
-  on self-supervised learning,'' in \emph{Proceedings of the IEEE/CVF
-  Conference on Computer Vision and Pattern Recognition (CVPR)}, 2022, pp.
-  13\,337--13\,346.
+  on self-supervised learning,'' 2022. [Online]. Available:
+  \url{https://arxiv.org/abs/2105.10123}
+\BIBentrySTDinterwordspacing
 
 \bibitem{zhu2026dift}
-J.~Zhu, Y.~Jin, Q.~Ye, Z.~Guo, K.~Fang, R.~Du, Y.~Zhao, and H.~Hu, ``Dift:
+\BIBentryALTinterwordspacing
+J.~Zhu, Y.~Jin, Q.~Ye, Z.~Guo, K.~Fang, R.~Du, Y.~Zhao, and H.~Hu, ``{DIFT}:
   Protecting contrastive learning against data poisoning backdoor attacks,'' in
-  \emph{Proceedings of the {AAAI} Conference on Artificial Intelligence}, 2026.
+  \emph{Proceedings of the {AAAI} Conference on Artificial Intelligence},
+  vol.~40, no.~2, 2026, pp. 1641--1649. [Online]. Available:
+  \url{https://doi.org/10.1609/aaai.v40i2.37141}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

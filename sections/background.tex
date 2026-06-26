@@ -9,14 +9,14 @@ Complex computational problems can be addressed through various methodologies, p
 \end{aligned}
 \label{eq:deeplearningmain}
 \end{equation}
-The objective of training is to optimize the internal parameters—specifically the weights and biases of the neurons—to maximize the model's predictive accuracy. 
+The objective of training is to optimize the internal parameters specifically the weights and biases of the neurons to maximize the model's predictive accuracy. 
 
 This optimization process is systematically executed through the following iterative phases:
 \begin{itemize}
   \item \textbf{Initialization:} The network parameters are initially set using randomized values or predefined distribution strategies.
   \item \textbf{Forward Propagation:} An input vector $x$ is processed through the mapping function $f_{\theta}$ to generate a predicted output, denoted as $\hat{y}$ (commonly referred to as the forward pass).
   \item \textbf{Error Evaluation:} The discrepancy between the predicted output and the ground-truth label $y$ is quantified by evaluating a Loss function $\mathbf{L}$ (defined in Equation \ref{eq:lossEq}).
-\item \textbf{Backpropagation and Optimization:} Utilizing the backpropagation algorithm, the gradient of the loss function is computed with respect to each network weight via the chain rule. The model parameters are subsequently adjusted in the negative gradient direction—a process known as gradient descent—effectively minimizing the objective function.
+  \item \textbf{Backpropagation and Optimization:} Utilizing the backpropagation algorithm, the gradient of the loss function is computed with respect to each network weight via the chain rule. The model parameters are subsequently adjusted in the negative gradient direction a process known as gradient descent effectively minimizing the objective function.
 \end{itemize}
 
 \begin{equation}
@@ -35,7 +35,21 @@ Formally, $\text{Deep Learning} \subset \text{Machine Learning}$. While both par
 This infrastructure comprises cellular base stations maintained by telecommunication service providers. These stations aggregate vast quantities of telemetry and location data which, despite the application of anonymization techniques, remain vulnerable to re-identification attacks orchestrated via deep learning models. Consequently, any adversary possessing sufficient computational resources could exploit these vulnerabilities to execute large-scale mass surveillance\footnote{\href{https://www.amnesty.org/en/latest/campaigns/2015/03/easy-guide-to-mass-surveillance/}{Amnesty International: An Easy Guide to Mass Surveillance}}.
 
 \subsection{The SURE Framework (User Re-identification)}
-The SURE (Smartphone Users RE-identification) framework \cite{duan2025sure} is a deep learning model designed to accurately classify whether two input network traces belong to the same user. It utilizes a parallel dual-encoder architecture to process anonymous and known-identity traces independently, preventing data contamination before mathematical comparison. The framework consists of four components: \textbf{Trace Encoder}, \textbf{Matching Network}, \textbf{Fusion Network}, and \textbf{Classifier}. The Trace Encoder performs spatio-temporal embedding, which vectorizes four key privacy-impacting features: Base Station (BS) IDs, association duration, and discretized levels of uplink and downlink traffic \cite{duan2025sure}. The Matching Network then computes cross-attention weight scores between sequences of different days, capturing behavioral similarities across time. Extensive evaluations on a large-scale dataset of 10,000 users over four months (comprising more than 200 million network access records from 39,032 BSs) show that SURE achieves an AUC of 0.941, an F1-score of 0.869, and a precision of 0.807 \cite{duan2025sure}. Notably, even with a data window as narrow as four days, SURE maintains AUC scores of 0.89 with fusion features. Further analysis reveals that older and male users exhibit higher susceptibility to re-identification risks due to more consistent behavioral patterns \cite{duan2025sure}.
+The SURE (Smartphone Users RE-identification) framework \cite{duan2025sure} is a deep learning model designed to accurately classify whether two input network traces belong to the same user. It utilizes a parallel dual-encoder architecture to process anonymous and known-identity traces independently, preventing data contamination before mathematical comparison. The framework consists of four components: \textbf{Trace Encoder}, \textbf{Matching Network}, \textbf{Fusion Network}, and \textbf{Classifier}, as illustrated in Fig.~\ref{fig:sure_arch}. The Trace Encoder performs spatio-temporal embedding, which vectorizes four key privacy-impacting features: Base Station (BS) IDs, association duration, and discretized levels of uplink and downlink traffic \cite{duan2025sure}. The Matching Network then computes cross-attention weight scores between sequences of different days, capturing behavioral similarities across time. Extensive evaluations on a large-scale dataset of 10,000 users over four months (comprising more than 200 million network access records from 39,032 BSs) show that SURE achieves an AUC of 0.941, an F1-score of 0.869, and a precision of 0.807 \cite{duan2025sure}. Notably, even with a data window as narrow as four days, SURE maintains AUC scores of 0.89 with fusion features. The concentration of user activity on a small number of base stations is visualized in Fig.~\ref{fig:heatmap}, which shows that the majority of traffic is attributed to the top two BSs per user. Further analysis reveals that older and male users exhibit higher susceptibility to re-identification risks due to more consistent behavioral patterns \cite{duan2025sure}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/sure_fig3_architecture.png}
+\caption{Overall architecture of the SURE re-identification system. Step~1 preprocesses raw operator data into behavioral features; Step~2 mines user patterns from traffic and BS associations; Step~3 employs a dual-encoder model (Trace Encoder, Matching Network, Fusion Network, Classifier) to determine whether two traces belong to the same user. Adapted from \cite{duan2025sure}.}
+\label{fig:sure_arch}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\columnwidth]{figures/sure_fig9_heatmap.png}
+\caption{Traffic usage heatmap across the top 10 most active base stations for 1,000 users. The bottom two rows (BS~1 and BS~2) concentrate the vast majority of each user's traffic, illustrating the ``Top~2~BS'' rule that enables spatial fingerprinting. Adapted from \cite{duan2025sure}.}
+\label{fig:heatmap}
+\end{figure}
 
 \subsection{The MoCo Framework (Contact Detection)}
 MoCo (Mobile Contact Detection) \cite{duan2025moco} focuses on identifying users moving in ``lockstep,'' such as those co-traveling in the same vehicle. The framework addresses the problem of detecting mobile contact events between urban users who exhibit similar spatio-temporal traveling behaviors, leveraging cellular signaling traces of the form $\langle$user ID, BS ID, timestamp$\rangle$ \cite{duan2025moco}.
@@ -46,7 +60,14 @@ MoCo employs a three-stage pipeline:
     \item \textbf{Spatio-Temporal Filter (ST-Filter):} This module eliminates unlikely mobile contact trajectory pairs in both spatial and temporal domains, typically requiring $\ge 60\%$ spatial similarity to retain candidate pairs \cite{duan2025moco}.
     \item \textbf{Detection Learning Network:} An LSTM-based spatial branch captures correlations among candidate trajectories using quadkey-encoded BS sequences, while an MLP-based temporal branch learns time-step-dependent patterns from one-hot encoded trajectory vectors \cite{duan2025moco}.
 \end{itemize}
-The model is trained using cross-entropy loss and outputs a binary mobile contact classification. Extensive experiments on real-world data (241 user trajectories spanning 211 hours and 6,204 km) demonstrate that MoCo achieves an average F1-score of 87.13\%, significantly outperforming classical methods such as S-LCSS and ST-LCSS, as well as deep learning baselines including DPLink and DeepTUL \cite{duan2025moco}.
+The model is trained using cross-entropy loss and outputs a binary mobile contact classification. Extensive experiments on real-world data (241 user trajectories spanning 211 hours and 6,204 km) demonstrate that MoCo achieves an average F1-score of 87.13\%, significantly outperforming classical methods such as S-LCSS and ST-LCSS, as well as deep learning baselines including DPLink and DeepTUL \cite{duan2025moco}. Fig.~\ref{fig:moco_overview} provides an overview of MoCo's three-stage design.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\columnwidth]{figures/moco_fig12_overview.png}
+\caption{Design overview of MoCo. Stage~1 applies DBSCAN-based denoising to remove remote BS noise; Stage~2 filters trajectory pairs using spatio-temporal similarity; Stage~3 uses a combined LSTM (spatial) and MLP (temporal) learning network with data alignment to classify mobile contact events. Adapted from \cite{duan2025moco}.}
+\label{fig:moco_overview}
+\end{figure}
 
 \subsection{Supply Chain Vulnerabilities in Learning-Based Pipelines}
 Although SURE and MoCo rely on supervised learning, related work in self-supervised learning (SSL) reveals broader vulnerabilities that are relevant to centralized data pipelines. Studies on backdoor attacks show that an adversary can poison as little as 0.5\% of unlabeled training data with a rigid trigger patch, causing an SSL model to associate that trigger with a target category at test time \cite{saha2022backdoor, zhu2026dift}. Recent work such as DIFT \cite{zhu2026dift} proposes defenses against data poisoning in contrastive learning, while research on adversarial susceptibility \cite{gupta2022contrastiveselfsupervisedlearningleads} demonstrates that contrastive self-supervised models exhibit higher adversarial susceptibility than their supervised counterparts. These findings illustrate that learning-based pipelines introduce additional attack surfaces beyond metadata privacy, though this represents a different threat vector than the re-identification exploited by SURE and MoCo.
