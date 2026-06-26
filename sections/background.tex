@@ -22,7 +22,7 @@ This optimization process is systematically executed through the following itera
 \begin{equation}
 \begin{aligned}
   \hat{y} &= \Theta(x) \\
-  L(x) &= ( y - \hat{y} )^2
+  \mathcal{L} &= \mathcal{L}(\hat{y}, y)
 \end{aligned}
 \label{eq:lossEq}
 \end{equation}
@@ -48,7 +48,7 @@ MoCo employs a three-stage pipeline:
 \end{itemize}
 The model is trained using cross-entropy loss and outputs a binary mobile contact classification. Extensive experiments on real-world data (241 user trajectories spanning 211 hours and 6,204 km) demonstrate that MoCo achieves an average F1-score of 87.13\%, significantly outperforming classical methods such as S-LCSS and ST-LCSS, as well as deep learning baselines including DPLink and DeepTUL \cite{duan2025moco}.
 
-\subsection{Vulnerabilities in Self-Supervised Learning (SSL)}
-While powerful, these frameworks are susceptible to \textbf{backdoor attacks} \cite{saha2022backdoor, gupta2022contrastiveselfsupervisedlearningleads}. An adversary can poison as little as 0.5\% of unlabeled training data with a rigid ``trigger'' patch, causing the model to associate that trigger with a target category at test time \cite{saha2022backdoor, zhu2026dift}. Recent work such as DIFT \cite{zhu2026dift} proposes defenses against data poisoning in contrastive learning, while studies on adversarial susceptibility \cite{gupta2022contrastiveselfsupervisedlearningleads} demonstrate that contrastive self-supervised models are inherently more vulnerable to adversarial perturbations than their supervised counterparts.
+\subsection{Supply Chain Vulnerabilities in Learning-Based Pipelines}
+Although SURE and MoCo rely on supervised learning, related work in self-supervised learning (SSL) reveals broader vulnerabilities that are relevant to centralized data pipelines. Studies on backdoor attacks show that an adversary can poison as little as 0.5\% of unlabeled training data with a rigid trigger patch, causing an SSL model to associate that trigger with a target category at test time \cite{saha2022backdoor, zhu2026dift}. Recent work such as DIFT \cite{zhu2026dift} proposes defenses against data poisoning in contrastive learning, while research on adversarial susceptibility \cite{gupta2022contrastiveselfsupervisedlearningleads} demonstrates that contrastive self-supervised models are inherently more vulnerable to adversarial perturbations than their supervised counterparts. These findings illustrate that learning-based pipelines introduce additional attack surfaces beyond metadata privacy, though this represents a different threat vector than the re-identification exploited by SURE and MoCo.
 
 

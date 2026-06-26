@@ -1,7 +1,23 @@
 \section{Evaluation}\label{sec:evaluation}
 
-\subsection{Proposed Experimental Setup}
-Since Meshtastic does not generate cellular BS traces, the required input features for SURE are unavailable.
-MoCo cannot be directly applied because the required signaling traces are unavailable.
+\subsection{In-Scope Assessment of Re-Identification Attacks}
+A rigorous evaluation of the proposed Meshtastic parallel network against the SURE and MoCo frameworks requires first examining the precise input requirements of each attack model. Fundamental to this assessment is the concept of \textbf{scope}: a model can only operate on data that falls within its representational domain.
 
+\subsection{Input Feature Incompatibility}
+The SURE framework \cite{duan2025sure} requires four privacy-impacting input features extracted from cellular operator BSS/OSS databases: Base Station (BS) IDs, association duration, and discretized levels of uplink and downlink traffic. These features are derived from the continuous telemetry stream generated when a mobile device maintains a connection with the cellular network. Similarly, MoCo \cite{duan2025moco} requires cellular signaling traces of the form $\langle$user ID, BS ID, timestamp$\rangle$ to detect co-traveling patterns.
+
+Since the Meshtastic protocol operates on an entirely independent LoRa-based radio infrastructure, it generates none of these data types. There is no concept of a ``base station'' in a mesh network---only peer nodes. There is no centralized operator collecting uplink/downlink traffic volumes, no BS association logs, and no signaling trace database. The input feature space that SURE and MoCo operate over simply does not exist in a Meshtastic deployment.
+
+\subsection{Scope Boundary Argument}
+Because the SURE and MoCo models are defined exclusively over cellular operator metadata, a Meshtastic user falls entirely outside their representational scope. This is not a hypothesis to be tested empirically but a direct consequence of the input feature definitions:
+
+\begin{itemize}
+    \item \textbf{SURE}: Input $=$ BS ID sequence $+$ association duration $+$ uplink traffic $+$ downlink traffic. Meshtastic provides none of these. Therefore SURE cannot form a valid input vector.
+    \item \textbf{MoCo}: Input $=$ $\langle$user ID, BS ID, timestamp$\rangle$ traces. Meshtastic does not associate users with BSs. Therefore MoCo cannot construct candidate trajectory pairs.
+\end{itemize}
+
+By virtue of operating outside the domain of the input features these models require, Meshtastic users are not susceptible to the re-identification and contact-detection attacks described by SURE and MoCo as currently designed. This conclusion follows from the definitional mismatch between the data each attack requires and the data a Meshtastic deployment produces. We note, however, that this does not preclude the development of future models---for instance, a LoRa-aware variant of SURE---that could exploit Meshtastic metadata such as node IDs, hop counts, or signal strength records should such data become available to an adversary.
+
+\subsection{Acknowledged Residual Risks}
+While the cellular metadata channel is eliminated, Meshtastic users remain potentially vulnerable to RF-level attacks outside the scope of SURE and MoCo. Signal triangulation via directional antennas can localize transmitting nodes, and emerging RF fingerprinting techniques could theoretically identify individual LoRa transmitters based on hardware-specific signal characteristics. Additionally, nodes periodically broadcast position, telemetry, and node-info updates over the primary channel \cite{meshtastic_overview}, which could be intercepted by any receiver within range. These risks are not captured by the SURE or MoCo frameworks but warrant acknowledgment as orthogonal threat vectors.
 
