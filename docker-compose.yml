@@ -2,4 +2,4 @@ services:
   compiler:
     build: .
     volumes:
-      - .:/data
+      - .:/data:z

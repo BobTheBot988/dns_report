@@ -22,14 +22,12 @@ This optimization process is systematically executed through the following itera
 \begin{equation}
 \begin{aligned}
   \hat{y} &= \Theta(x) \\
-  L(x) &= y - \hat{y}
+  L(x) &= ( y - \hat{y} )^2
 \end{aligned}
 \label{eq:lossEq}
 \end{equation}
 
-While the mathematical formulation of the loss function varies depending on the specific task architecture, its underlying objective remains constant: the resulting scalar serves as a performance metric utilized by optimization algorithms to converge toward the global minimum\footnote{The parameter configuration that minimizes the loss value.}.
-
-The foundational principles detailed above describe standard Machine Learning. The distinction between classical Machine Learning and Deep Learning primarily lies in structural complexity; standard Machine Learning models typically rely on shallow architectures, whereas Deep Learning utilizes deep neural networks characterized by multiple successive hidden layers. 
+While the mathematical formulation of the loss function varies depending on the specific task architecture, its underlying objective remains constant: the resulting scalar serves as a performance metric utilized by optimization algorithms to converge toward a local minimum\footnote{The parameter configuration that minimizes the loss value.}.
 
 Formally, $\text{Deep Learning} \subset \text{Machine Learning}$. While both paradigms maintain distinct domains of utility, this report focuses primarily on the deployment and behavior of Deep Learning architectures.
 
@@ -51,6 +49,6 @@ MoCo employs a three-stage pipeline:
 The model is trained using cross-entropy loss and outputs a binary mobile contact classification. Extensive experiments on real-world data (241 user trajectories spanning 211 hours and 6,204 km) demonstrate that MoCo achieves an average F1-score of 87.13\%, significantly outperforming classical methods such as S-LCSS and ST-LCSS, as well as deep learning baselines including DPLink and DeepTUL \cite{duan2025moco}.
 
 \subsection{Vulnerabilities in Self-Supervised Learning (SSL)}
-While powerful, these frameworks are susceptible to \textbf{backdoor attacks} \cite{saha2022backdoor, gupta2023contrastive}. An adversary can poison as little as 0.5\% of unlabeled training data with a rigid ``trigger'' patch, causing the model to associate that trigger with a target category at test time \cite{saha2022backdoor, zhu2026dift}. Recent work such as DIFT \cite{zhu2026dift} proposes defenses against data poisoning in contrastive learning, while studies on adversarial susceptibility \cite{gupta2023contrastive} demonstrate that contrastive self-supervised models are inherently more vulnerable to adversarial perturbations than their supervised counterparts.
+While powerful, these frameworks are susceptible to \textbf{backdoor attacks} \cite{saha2022backdoor, gupta2022contrastiveselfsupervisedlearningleads}. An adversary can poison as little as 0.5\% of unlabeled training data with a rigid ``trigger'' patch, causing the model to associate that trigger with a target category at test time \cite{saha2022backdoor, zhu2026dift}. Recent work such as DIFT \cite{zhu2026dift} proposes defenses against data poisoning in contrastive learning, while studies on adversarial susceptibility \cite{gupta2022contrastiveselfsupervisedlearningleads} demonstrate that contrastive self-supervised models are inherently more vulnerable to adversarial perturbations than their supervised counterparts.
 
 

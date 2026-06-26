@@ -6,11 +6,11 @@ As long as cellular connections are maintained, \textbf{full operational disclos
 \begin{itemize}
     \item \textbf{Behavioral metadata is identity.} The SURE framework demonstrates that BS association patterns and traffic usage create unique behavioral fingerprints, achieving re-identification AUC scores of 0.941 on datasets of 10,000 users, even with k-anonymity applied \cite{duan2025sure}.
     \item \textbf{Social graphs are exposed.} MoCo extends the threat from individual identification to social network reconstruction, detecting co-traveling contacts with an F1-score of 87.13\% using only cellular signaling traces \cite{duan2025moco}.
-    \item \textbf{Software mitigations are insufficient.} Traditional anonymization techniques and model-hardening approaches (ASTRA, RoCL) fail to address the root cause: centralized metadata collection by cellular operators \cite{chhipa2024astra, kim2020rocl}.
+    \item \textbf{Software mitigations are insufficient.} Traditional anonymization techniques and model-hardening approaches (ASTRA, RoCL) fail to address the root cause: centralized metadata collection by cellular operators \cite{chhipa2025astra, kim2020rocl}.
     \item \textbf{Physical-layer separation is necessary.} The Meshtastic parallel radio network eliminates the data source exploited by both SURE and MoCo by operating on a completely independent infrastructure with no centralized logging \cite{meshtastic_overview}.
 \end{itemize}
 
-Parallel radio networks like Meshtastic are not just alternatives but technical necessities for operating outside the ``Battlefield of Data'' \cite{duan2025sure, meshtastic_overview}.
+Parallel radio networks like Meshtastic are alternatives for operating outside the ``Battlefield of Data'' \cite{duan2025sure, meshtastic_overview}.
 
 \subsection{Future Extensions}
 Several directions for future work emerge from this analysis:
