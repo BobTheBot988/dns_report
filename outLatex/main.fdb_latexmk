@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1782489371.48089 "main.aux" "main.bbl" "main" 1782489372.14202 0
+["bibtex main"] 1782499393.89279 "main.aux" "main.bbl" "main" 1782499394.67541 0
   "./bibliography.bib" 1782487580.56968 3686 ce2ab0239dbf22adc43adf768474aec0 ""
   "/usr/local/texlive/2024/texmf-dist/bibtex/bst/ieeetran/IEEEtranS.bst" 1440712899 61730 614a61a3af01043d45925bdf2bd38471 ""
-  "main.aux" 1782489158.81366 10730 3b3e052040f9d0ba37b92ad6cfd19c2f ""
+  "main.aux" 1782499368.96085 10728 04ace640ec24ded03b10bdca7536b830 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1782489371.55917 "/Users/alessandrogautieri/Documents/GitHub/dns_report/main.tex" "outLatex/main.pdf" "main" 1782489372.14207 0
-  "/Users/alessandrogautieri/Documents/GitHub/dns_report/main.tex" 1782487580.61568 5656 e1533c42f51f81a984715677df894952 ""
+["pdflatex"] 1782499393.99024 "/Users/alessandrogautieri/Documents/GitHub/dns_report/main.tex" "outLatex/main.pdf" "main" 1782499394.67547 0
+  "/Users/alessandrogautieri/Documents/GitHub/dns_report/main.tex" 1782499363.25447 5712 f4dfe46ae179e091452681205ac78440 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/adobe/helvetic/phvb7t.tfm" 1136768653 2240 eb56c13537f4d8a0bd3fafc25572b1bd ""
@@ -139,17 +139,17 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1731761067.46166 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1731760769 8221442 c29ce1dace3013a37cf38c978d0ce70a ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "figures/moco_fig12_overview.png" 1782488747.10215 155768 49f7577b0fafcf010ae1f2b61e41926c ""
+  "figures/moco.png" 1782499229.5992 165480 c04fc99ebabe66b2018d7b667d54fcba ""
   "figures/sure_fig1_attack_scenario.png" 1782488545.95981 332600 e0450800ec2d86f9c5afcee47a16dac4 ""
   "figures/sure_fig2_data_collection.png" 1782488545.98655 189598 09c64dc373aec9355523629b919e483b ""
   "figures/sure_fig3_architecture.png" 1782488546.08971 640766 3c2da3ad5a575dd16d75a6735dfedfdb ""
   "figures/sure_fig9_heatmap.png" 1782488574.46031 101478 17e313ee64aa61a2a9ef3c19b46f659a ""
-  "main.bbl" 1782489371.55719 3466 1504c004b0701af457d4728fb389cd7a "bibtex main"
-  "main.tex" 1782487580.61568 5656 e1533c42f51f81a984715677df894952 ""
-  "outLatex/main.aux" 1782489371.96964 10728 139a69800c9bc5add731b3af57008356 "pdflatex"
-  "outLatex/main.out" 1782489371.97022 5295 dd2f01907f31689a5e88efc7e22de265 "pdflatex"
-  "sections/background.tex" 1782489370.39397 9086 f260048d62faee37aede5293f7768bb8 ""
-  "sections/conclusions.tex" 1782487580.61795 2868 9f89c86d31ee681fba006e7b4e54325f ""
+  "main.bbl" 1782499393.97962 3466 1504c004b0701af457d4728fb389cd7a "bibtex main"
+  "main.tex" 1782499363.25447 5712 f4dfe46ae179e091452681205ac78440 ""
+  "outLatex/main.aux" 1782499394.46479 10728 04ace640ec24ded03b10bdca7536b830 "pdflatex"
+  "outLatex/main.out" 1782499394.46549 5295 dd2f01907f31689a5e88efc7e22de265 "pdflatex"
+  "sections/background.tex" 1782499229.60399 9071 25327f86b60d839e392373a41233e739 ""
+  "sections/conclusions.tex" 1782499393.74452 2876 fc85b2de4b7183e9828039ecad5bbc14 ""
   "sections/evaluation.tex" 1782489370.38822 3585 eac4bdbab03ffa9b4faf5db06473627c ""
   "sections/introduction.tex" 1782489370.38821 3868 8e291b9505b437b3da7a045584485cbc ""
   "sections/our_approach.tex" 1782489370.3882 6707 2e35f57ecb9ea05eef2547d35ba88e72 ""

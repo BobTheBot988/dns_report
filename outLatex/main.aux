@@ -23,15 +23,11 @@
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
 \newlabel{sec:introduction}{{1}{1}{Introduction}{section.1}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.1}The Battlefield of Data}{1}{subsection.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The Problem-Behavior as Identity}{1}{subsection.1.2}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Cellular network data collection pipeline: smartphones exchange uplink/downlink traffic with base stations, which forward telemetry to the operator data center for storage in BSS and OSS databases. Adapted from \cite  {duan2025sure}.}}{1}{figure.1}\protected@file@percent }
 \newlabel{fig:data_collection}{{1}{1}{Cellular network data collection pipeline: smartphones exchange uplink/downlink traffic with base stations, which forward telemetry to the operator data center for storage in BSS and OSS databases. Adapted from \cite {duan2025sure}}{figure.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.2}The Problem-Behavior as Identity}{1}{subsection.1.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.3}The Illusion of Anonymity}{1}{subsection.1.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {1.4}Project Objectives}{1}{subsection.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{1}{section.2}\protected@file@percent }
-\newlabel{sec:background}{{2}{1}{Background}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Deep Learning Networks}{1}{subsection.2.1}\protected@file@percent }
-\newlabel{eq:deeplearningmain}{{1}{1}{Deep Learning Networks}{equation.2.1}{}}
 \citation{duan2025sure}
 \citation{duan2025sure}
 \citation{duan2025sure}
@@ -40,16 +36,19 @@
 \citation{duan2025sure}
 \citation{duan2025sure}
 \citation{duan2025sure}
+\citation{duan2025moco}
 \citation{duan2025moco}
 \citation{duan2025moco}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Cellular user re-identification attack: an adversary uses leaked known-identity data $Q$ and a matching model $M$ to link anonymous records from a publicly released dataset $P$ back to real identities. Adapted from \cite  {duan2025sure}.}}{2}{figure.2}\protected@file@percent }
 \newlabel{fig:attack_scenario}{{2}{2}{Cellular user re-identification attack: an adversary uses leaked known-identity data $Q$ and a matching model $M$ to link anonymous records from a publicly released dataset $P$ back to real identities. Adapted from \cite {duan2025sure}}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Background}{2}{section.2}\protected@file@percent }
+\newlabel{sec:background}{{2}{2}{Background}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Deep Learning Networks}{2}{subsection.2.1}\protected@file@percent }
+\newlabel{eq:deeplearningmain}{{1}{2}{Deep Learning Networks}{equation.2.1}{}}
 \newlabel{eq:lossEq}{{2}{2}{Deep Learning Networks}{equation.2.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Base Station}{2}{subsection.2.2}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}The SURE Framework (User Re-identification)}{2}{subsection.2.3}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Overall architecture of the SURE re-identification system. Step~1 preprocesses raw operator data into behavioral features; Step~2 mines user patterns from traffic and BS associations; Step~3 employs a dual-encoder model (Trace Encoder, Matching Network, Fusion Network, Classifier) to determine whether two traces belong to the same user. Adapted from \cite  {duan2025sure}.}}{2}{figure.3}\protected@file@percent }
-\newlabel{fig:sure_arch}{{3}{2}{Overall architecture of the SURE re-identification system. Step~1 preprocesses raw operator data into behavioral features; Step~2 mines user patterns from traffic and BS associations; Step~3 employs a dual-encoder model (Trace Encoder, Matching Network, Fusion Network, Classifier) to determine whether two traces belong to the same user. Adapted from \cite {duan2025sure}}{figure.3}{}}
-\citation{duan2025moco}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}The MoCo Framework (Contact Detection)}{2}{subsection.2.4}\protected@file@percent }
 \citation{duan2025moco}
 \citation{duan2025moco}
 \citation{duan2025moco}
@@ -66,9 +65,10 @@
 \citation{duan2025moco}
 \citation{meshtastic_overview}
 \citation{meshtastic_overview}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Overall architecture of the SURE re-identification system. Step~1 preprocesses raw operator data into behavioral features; Step~2 mines user patterns from traffic and BS associations; Step~3 employs a dual-encoder model (Trace Encoder, Matching Network, Fusion Network, Classifier) to determine whether two traces belong to the same user. Adapted from \cite  {duan2025sure}.}}{3}{figure.3}\protected@file@percent }
+\newlabel{fig:sure_arch}{{3}{3}{Overall architecture of the SURE re-identification system. Step~1 preprocesses raw operator data into behavioral features; Step~2 mines user patterns from traffic and BS associations; Step~3 employs a dual-encoder model (Trace Encoder, Matching Network, Fusion Network, Classifier) to determine whether two traces belong to the same user. Adapted from \cite {duan2025sure}}{figure.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Traffic usage heatmap across the top 10 most active base stations for 1,000 users. The bottom two rows (BS~1 and BS~2) concentrate the vast majority of each user's traffic, illustrating the ``Top~2~BS'' rule that enables spatial fingerprinting. Adapted from \cite  {duan2025sure}.}}{3}{figure.4}\protected@file@percent }
 \newlabel{fig:heatmap}{{4}{3}{Traffic usage heatmap across the top 10 most active base stations for 1,000 users. The bottom two rows (BS~1 and BS~2) concentrate the vast majority of each user's traffic, illustrating the ``Top~2~BS'' rule that enables spatial fingerprinting. Adapted from \cite {duan2025sure}}{figure.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}The MoCo Framework (Contact Detection)}{3}{subsection.2.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Supply Chain Vulnerabilities in Learning-Based Pipelines}{3}{subsection.2.5}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Design overview of MoCo. Stage~1 applies DBSCAN-based denoising to remove remote BS noise; Stage~2 filters trajectory pairs using spatio-temporal similarity; Stage~3 uses a combined LSTM (spatial) and MLP (temporal) learning network with data alignment to classify mobile contact events. Adapted from \cite  {duan2025moco}.}}{3}{figure.5}\protected@file@percent }
 \newlabel{fig:moco_overview}{{5}{3}{Design overview of MoCo. Stage~1 applies DBSCAN-based denoising to remove remote BS noise; Stage~2 filters trajectory pairs using spatio-temporal similarity; Stage~3 uses a combined LSTM (spatial) and MLP (temporal) learning network with data alignment to classify mobile contact events. Adapted from \cite {duan2025moco}}{figure.5}{}}
@@ -76,7 +76,6 @@
 \newlabel{sec:our_approach}{{3}{3}{Proposed Approach: Meshtastic Parallel Network}{section.3}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Technical Architecture}{3}{subsection.3.1}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Decentralized Metadata Protection}{3}{subsection.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Encryption and Routing}{3}{subsection.3.3}\protected@file@percent }
 \citation{duan2025sure}
 \citation{chhipa2025astra}
 \citation{kim2020rocl}
@@ -89,6 +88,7 @@
 \citation{duan2025sure}
 \citation{duan2025sure}
 \citation{duan2025moco}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Encryption and Routing}{4}{subsection.3.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Justification of Selection}{4}{subsection.3.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {4}SWOT Analysis}{4}{section.4}\protected@file@percent }
 \newlabel{sec:swot}{{4}{4}{SWOT Analysis}{section.4}{}}
@@ -109,7 +109,6 @@
 \citation{duan2025sure,duan2025moco}
 \citation{zhu2026dift}
 \citation{duan2025sure,duan2025moco}
-\citation{duan2025sure}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Scope Boundary Argument}{5}{subsection.5.3}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}Acknowledged Residual Risks}{5}{subsection.5.4}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {6}Related Work}{5}{section.6}\protected@file@percent }
@@ -119,6 +118,7 @@
 \@writefile{toc}{\contentsline {section}{\numberline {7}Conclusions}{5}{section.7}\protected@file@percent }
 \newlabel{sec:conclusions}{{7}{5}{Conclusions}{section.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {7.1}Summary of Findings}{5}{subsection.7.1}\protected@file@percent }
+\citation{duan2025sure}
 \citation{duan2025moco}
 \citation{chhipa2025astra}
 \citation{kim2020rocl}
